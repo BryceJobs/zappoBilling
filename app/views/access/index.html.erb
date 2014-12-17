@@ -1,0 +1,11 @@
+<div >
+<h1>Select your option in the menu </h1>
+<br><br>
+<ul >
+	<li><%= link_to "Clients" , clients_path() %><br></li>
+	<li><%= link_to "Products" , products_path() %><br></li>
+	<li><%= link_to "Orders" , orders_path() %><br></li>
+	<li><%= link_to "edit Shop info", edit_shop_path(@shop) %><br></li>
+	<li><%= link_to "logout", :action => 'logout' %><br></li>
+</ul>
+</div>

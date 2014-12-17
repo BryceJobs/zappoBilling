@@ -1,0 +1,16 @@
+<%= form_tag(action: 'add_to_cart', :ols => params[:ols] || @ols)  do %>
+	<p>Choose your product and specify the quantity and add to the order</p>
+	<p><% @ols %><br> <% params.inspect %>  </p>
+	<table>
+		<tr>
+			<td><strong>product</strong></td>
+			<td><%= select_tag("ol[product_id]", options_from_collection_for_select(Product.scoped, "id", "name") ) %></td>			
+			<td><strong>Qty</strong></td>
+			<td><%= number_field_tag("ol[qty]") %></td>			
+			<td><%= submit_tag('add product') %></td>	
+
+		</tr>
+	</table>
+	<% end -%>
+<br>
+<br>

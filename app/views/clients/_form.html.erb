@@ -1,0 +1,24 @@
+<%= form_for(@client) do |f| %>
+
+<%= errors_messages_for(@client) %>
+
+  <div class="field">
+    <%= f.label :Fname %><br />
+    <%= f.text_field :Fname %>
+  </div>
+  <div class="field">
+    <%= f.label :Lname %><br />
+    <%= f.text_field :Lname %>
+  </div>
+  <div class="field">
+    <%= f.label :address %><br />
+    <%= f.text_field :address %>
+  </div>
+  <div class="field">
+    <%= f.label :phonenumber %><br />
+    <%= f.text_field :phonenumber %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

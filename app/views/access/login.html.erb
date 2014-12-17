@@ -1,0 +1,24 @@
+<h1>enter your credential to log in your shop or <%= link_to 'Create new shop', new_shop_path %></h1>
+
+<br>
+<hr>
+<%= notice %>
+<hr>
+
+<%= form_tag(action: 'attempt_login') do %>
+	<table>
+		<tr>
+			<td><label>username</label></td>
+			<td><%= text_field_tag "username" %></td>
+		</tr>
+		<tr>
+			<td><label>password</label></td>
+			<td><%= password_field_tag "password" %></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td><%= submit_tag('Login') %></td>
+		</tr>
+		<br>	
+	</table>
+<% end -%> <% params.inspect %>

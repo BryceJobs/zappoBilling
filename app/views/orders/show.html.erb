@@ -1,0 +1,57 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Num item:</b>
+  <%= @order.num_item %>
+</p>
+
+<p>
+  <b>Amount:</b>
+  <%= @order.amount %>
+</p>
+
+<p>
+  <b>Client:</b>
+  <%= @order.client.Fname %>
+</p>
+
+
+
+<table border = 2>
+  <tr>
+    <th>Product ID</th>
+    <th>Product name</th>
+    
+    <th>Unit price</th>
+    <th>Qty</th>
+    <th>sub total</th>
+  </tr> 
+
+  <% if  @order.order_lines %>
+  	<%   @order.order_lines.each do |p| %>
+  <tr>
+    <td> <%= p.product.id %> </td>
+    <td> <%= p.product.name %> </td>
+    
+    <td> <%= p.product.price %> </td>
+    <td> <%= p.qty %> </td>
+    <td> <%= p.sub_total %> </td>
+  </tr>
+   
+  <% end -%>
+  <% end -%>
+  <tr>
+    <th colspan = 3> Total Order </th>
+    <th><%= @order.num_item %></th>
+    <th><%= @order.amount %></th>
+  </tr>
+  
+</table>
+
+<br><br>
+
+
+
+
+<%= link_to 'Edit', edit_order_path(@order) %> |
+<%= link_to 'Back', orders_path %>
